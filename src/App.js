@@ -61,7 +61,7 @@ const App = () => {
         setCurrentNumber('0')
         setOperation('/')
     }else {
-      const div = Number(firstNumber) * Number(currentNumber);
+      const div = Number(firstNumber) / Number(currentNumber);
       setCurrentNumber(String(div));
       setOperation('')
       console.log(div)
@@ -81,6 +81,9 @@ const App = () => {
         case '*':
           handleMultNumbers();
           break;
+        case '/':
+          handleDivNumbers();
+          break;
 
       default:
          break;
@@ -96,7 +99,7 @@ const App = () => {
           <Button label="C" onClick={ handleOnClear }/>
           <Button label="M" onClick={() => handleAddNumber('M')}/>
           <Button label="%" onClick={() => handleAddNumber('%')}/>
-          <Button label="/" onClick={() => handleAddNumber('/')}/>
+          <Button label="/" onClick={ handleDivNumbers }/>
         </Row> 
 
         <Row>
