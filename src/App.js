@@ -7,13 +7,11 @@ import { Container, Content, Row } from './styles';
 const App = () => {
   const [currentNumber, setCurrentNumber] = useState('0');
   const [firstNumber, setFirstNumber] = useState('0');
-  // const [memoryNumber, setMemoryNumber] = useState('0');
   const [operation, setOperation] = useState('');
 
   const handleOnClear = () => {
     setCurrentNumber('0')
     setFirstNumber('0')
-    // setMemoryNumber('0')
     setOperation('')
   };
 
@@ -102,10 +100,6 @@ const App = () => {
     setCurrentNumber(String(invert));
   }
 
-
-
-
-
   const handleEquals = () => {
     if (firstNumber !== '0' && operation !== '' && currentNumber !== '0') {
       switch (operation) {
@@ -159,7 +153,7 @@ const App = () => {
           <Button label="4" onClick={() => handleAddNumber('4')} />
           <Button label="5" onClick={() => handleAddNumber('5')} />
           <Button label="6" onClick={() => handleAddNumber('6')} />
-          <Button label="-" onClick={handleRemNumbers} />
+          <Button label="-" onClick={ handleRemNumbers } />
         </Row>
 
         <Row>
@@ -170,10 +164,10 @@ const App = () => {
         </Row>
 
         <Row>
-          <Button label="±" onClick={handleInvertNumbers} />
+          <Button label="±" onClick={ handleInvertNumbers } />
           <Button label="0" onClick={() => handleAddNumber('0')} />
           <Button label="," onClick={() => handleAddNumber('.')} />
-          <Button label="=" onClick={handleEquals} />
+          <Button label="=" onClick={ handleEquals } />
         </Row>
 
 
